@@ -1,0 +1,356 @@
+.betting-slip {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.betting-slip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+
+.connection-status .status-indicator.connected {
+  color: #22c55e;
+  font-weight: 500;
+}
+
+.connection-status .status-indicator.disconnected {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.user-balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.refresh-balance {
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.empty-slip {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+}
+
+.empty-slip small {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.bets-container {
+  margin-bottom: 16px;
+}
+
+.bet-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #fafafa;
+}
+
+.bet-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.remove-bet {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bet-selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.selection-name {
+  font-weight: 500;
+  color: #374151;
+}
+
+.odds {
+  background: #3b82f6;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.stake-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stake-input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.potential-win {
+  font-size: 12px;
+  color: #059669;
+  font-weight: 500;
+}
+
+.betting-summary {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+  margin-bottom: 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.summary-row.profit {
+  font-weight: 600;
+  color: #059669;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.place-bets-btn {
+  width: 100%;
+  padding: 12px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.place-bets-btn:hover:not(:disabled) {
+  background: #16a34a;
+}
+
+.place-bets-btn.disabled,
+.place-bets-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+## ✅ What's Working Well:
+
+1. **Proper Conditional Rendering** - Shows empty state vs populated state
+2. **Real-time Updates** - Connection status indicator
+3. **User Balance Integration** - Shows balance with refresh option
+4. **Individual Bet Management** - Each bet can be removed independently
+5. **Input Validation** - Number input with min/max constraints
+6. **Dynamic Button States** - Button text changes based on conditions
+7. **Accessibility** - Proper aria-labels for screen readers
+8. **Real-time Calculations** - Shows potential winnings per bet
+
+## 🎨 Required CSS Classes:
+
+To make this component look good, you'll need these CSS classes:
+```css
+.betting-slip {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.betting-slip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+
+.connection-status .status-indicator.connected {
+  color: #22c55e;
+  font-weight: 500;
+}
+
+.connection-status .status-indicator.disconnected {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.user-balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.refresh-balance {
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.empty-slip {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+}
+
+.empty-slip small {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.bets-container {
+  margin-bottom: 16px;
+}
+
+.bet-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #fafafa;
+}
+
+.bet-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.remove-bet {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bet-selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.selection-name {
+  font-weight: 500;
+  color: #374151;
+}
+
+.odds {
+  background: #3b82f6;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.stake-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stake-input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.potential-win {
+  font-size: 12px;
+  color: #059669;
+  font-weight: 500;
+}
+
+.betting-summary {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+  margin-bottom: 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.summary-row.profit {
+  font-weight: 600;
+  color: #059669;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.place-bets-btn {
+  width: 100%;
+  padding: 12px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.place-bets-btn:hover:not(:disabled) {
+  background: #16a34a;
+}
+
+.place-bets-btn.disabled,
+.place-bets-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
